@@ -48,6 +48,8 @@
        (mark-in! schemes scheme)
        (let [handler-timer (times request-method (times :other))
              _             (start handler-timer)
+             ;; TODO: how to ensure active-requests are decremented
+             ;; on synchronous exception? No way of knowing
              resp          (handler request)]
          (letfn [(stop-metrics! [resp]
                    (let [^{:tag "int"} status-code (or (:status resp)
