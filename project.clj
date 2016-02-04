@@ -3,6 +3,9 @@
   :url "https://github.brislabs.com/lsnape/mrs-clojure"
   
   :dependencies [[org.clojure/clojure "1.8.0"]
-                 [com.stuartsierra/component "0.3.1"]]
+                 [mount "0.1.9"]]
   
-  :profiles {:dev {:source-paths ["dev"]}})
+  :profiles {:dev {:source-paths ["dev" "dev/clj"]
+                   :dependencies [[org.clojure/tools.namespace "0.2.11"]
+                                  [potemkin "0.4.3"]]
+                   :repl-options {:init-ns user}}})
