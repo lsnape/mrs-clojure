@@ -19,5 +19,5 @@
 
 (defn reset []
   (stop)
-  (refresh :after 'user/go))
+  (tools-ns/refresh :after 'user/go))
 
