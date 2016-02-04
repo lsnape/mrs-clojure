@@ -1,12 +1,12 @@
 (ns mrs-clojure.setup
-  (:require [bidi.ring :refer [make-handler]]
-            [aleph.http :refer [start-server]]
+  (:require [aleph.http :refer [start-server]]
+            [bidi.ring :refer [make-handler]]
             [mount.core :refer [defstate] :as mount]
             [mrs-clojure.web :refer [routes]])
   (:gen-class))
 
 (defstate web-server
-  :start (start-server (make-handler #'routes) {:port 8081})
+  :start (start-server (make-handler routes) {:port 8080})
   :stop (.close web-server))
 
 (defn -main
