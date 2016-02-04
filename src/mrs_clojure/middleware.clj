@@ -1,5 +1,5 @@
 (ns mrs-clojure.middleware
-  (:require [manifold.deferred :refer [on-realized]]
+  (:require [manifold.deferred :as deferred]
             [metrics.core :refer [default-registry]]
             [metrics.counters :refer (counter inc! dec!)]
             [metrics.meters :refer (meter mark!)]
@@ -47,8 +47,8 @@
        (mark-in! request-methods request-method)
        (mark-in! schemes scheme)
        (let [handler-timer (times request-method (times :other))
-             _ (start handler-timer)
-             resp (handler request)]
+             _             (start handler-timer)
+             resp          (handler request)]
          (letfn [(stop-metrics! [resp]
                    (let [^{:tag "int"} status-code (or (:status resp)
                                                        404)]
@@ -58,7 +58,9 @@
                      (dec! active-requests)
                      resp))]
            (if (= resp (instance? manifold.deferred.Deferred resp))
-             (on-realized resp stop-metrics! #(dec! active-requests))
+             (-> resp
+                 (deferred/chain stop-metrics!)
+                 (deferred/catch #(do (dec! active-requests) %)))
              (stop-metrics! resp))))))))
 
 (comment
