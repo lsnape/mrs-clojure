@@ -4,7 +4,7 @@ An example project of what a new MixRadio template might look like.
 
 ## Rationale
 
-MixRadio template gives us a lot of things for free that other templates out there don't: low-level web server instrumentation, logging and graphite bootstrapping, basic resources needed for internal deployment, build and release configuration. Feature wise it's not bad at all, but times have moved on and there are performance and workflow improvements that can be made.
+MixRadio template gives us a lot of things for free that other templates out there don't: low-level web server instrumentation, logging and graphite bootstrapping, basic resources needed for internal deployment, build and release configuration. Feature wise it's not bad at all, but times have moved on and there are performance and workflow improvements to be made.
 
 ### Reloadable workflow
 In particular, the ability to start and stop the web server and flush application state (caches etc.) without restarting the REPL is a big productivity win.
