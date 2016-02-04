@@ -6,7 +6,7 @@
 (def not-found-resource
   (yada.protocols/as-resource nil))
 
-(def match-not-found
+(def match-all
   true)
 
 (def routes
@@ -24,4 +24,4 @@
                        :basePath "/1.x"}
                       ["/about" (yada "This is a test")])]
 
-    [match-not-found (yada not-found-resource)]]])
+    [match-all (yada not-found-resource)]]])
