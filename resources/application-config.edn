@@ -1,8 +1,4 @@
-{:graphite {:enabled? false
-            :host ""
-            :port 2003
-            :post-interval-seconds 60
-            :prefix ""}
+{:graphite {:enabled? false}
 
  :service {:port 8080
            :shutdown-timeout 5000
