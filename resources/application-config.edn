@@ -1,2 +1,9 @@
-{:service {:port 8080}}
+{:graphite {:enabled? false
+            :host ""
+            :port 2003
+            :post-interval-seconds 60
+            :prefix ""}
 
+ :service {:port 8080
+           :shutdown-timeout 5000
+           :threads 254}}

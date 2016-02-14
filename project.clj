@@ -8,7 +8,7 @@
                  [manifold "0.1.2-alpha2"]
                  [medley "0.7.1"]
                  [mount "0.1.9"]
-                 [mrconfig "0.1.0"]
+                 [mrconfig "0.1.3"]
                  [org.clojure/clojure "1.8.0"]
                  [org.clojure/core.cache "0.6.4"]
                  [org.clojure/tools.logging "0.3.1"]
