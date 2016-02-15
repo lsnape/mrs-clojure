@@ -16,7 +16,7 @@
                  [metrics-clojure-ring "2.3.0"]
                  
                  [mount "0.1.9"]
-                 [mrconfig "0.1.3"]
+                 [mrconfig "0.1.4"]
                  [org.clojure/clojure "1.8.0"]
                  [org.clojure/core.cache "0.6.4"]
                  [org.clojure/tools.logging "0.3.1"]
