@@ -1,5 +1,3 @@
-{:graphite {:enabled? false}
-
- :service {:port 8080
+{:service {:port 8080
            :shutdown-timeout 5000
            :threads 254}}
