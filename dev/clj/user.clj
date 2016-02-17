@@ -3,6 +3,8 @@
             [clojure.tools.namespace.repl :as tools-ns]
             [potemkin :refer [import-vars]]))
 
+(tools-ns/disable-reload!)
+
 (import-vars [mount.core start stop])
 
 (defn go []
@@ -20,4 +22,3 @@
 (defn reset []
   (stop)
   (tools-ns/refresh :after 'user/go))
-
